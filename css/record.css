@@ -1,11 +1,4 @@
-@import url('https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css');
-* {
-    box-sizing: border-box;
-}
-a {
-    text-decoration: none;
-    color: inherit;
-}
+@import url('../common.css');
 /* wrap style */
 .wrap {
     width: 1200px;
@@ -86,6 +79,7 @@ section.records .record-list .ex-record {
 }
 section.records .record-list .ex-record .remove-record{
     width: 75px;
+    border: 1px solid #000;
 }
 section.records .record-list .ex-record div {
     border: 1px solid #000;
