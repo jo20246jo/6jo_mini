@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="../css/record.css" />
+    </head>
+    <body>
+        <div class="wrap">
+            <h2 id="page-name">My Running Diary</h2>
+            <section class="records">
+                <ul class="input-list">
+                    <li class="line record">
+                        <div><span class="date">날짜</span></div>
+                        <div><span class="length">거리</span></div>
+                        <div><span class="time">시간</span></div>
+                    </li>
+                    <li class="input record">
+                        <div><input type="text" placeholder="0404"></div>
+                        <div><input type="text" placeholder="(m)"></div>
+                        <div><input type="text" placeholder="(hour)"></div>
+                    </li>
+                    <button class="complete">기록하기</button>
+                </ul>
+                <ul class="record-list">
+                    <li class="line ex-record">
+                        <div><span class="date">날짜</span></div>
+                        <div><span class="length">거리</span></div>
+                        <div><span class="time">시간</span></div>
+                        <div class="blank">삭제</div>
+                    </li>
+                    <li data-id="1" class="ex-record">
+                        <div><span class="date">0404</span></div>
+                        <div><span class="length">4km</span></div>
+                        <div><span class="time">1시간</span></div>
+                        <button class="remove-record">삭제하기</button>
+                    </li>
+                    <li data-id="2" class="ex-record">
+                        <div><span class="date">0405</span></div>
+                        <div><span class="length">10km</span></div>
+                        <div><span class="time">2시간</span></div>
+                        <button class="remove-record">삭제하기</button>
+                    </li>
+                    <li data-id="3" class="ex-record">
+                        <div><span class="date">0406</span></div>
+                        <div><span class="length">4km</span></div>
+                        <div><span class="time">1시간</span></div>
+                        <button class="remove-record">삭제하기</button>
+                    </li>
+                    <!-- asd -->
+                </ul>
+            </section>
+            <a class="moveto-cal" href="#"><span>캘린더 보러가기</span></a>
+            <a class="moveto-back" href="#"><span>뒤로 가기</span></a>
+        </div>
+    </body>
+</html>
