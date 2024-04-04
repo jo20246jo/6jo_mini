@@ -4,7 +4,8 @@
 
 div.wrap {
   width: 1200px;
-  height: 800px;
+  height: 100vh;
+  margin: 0 auto;
   background-color: orange;
   display: flex;
   justify-content: center;
