@@ -88,8 +88,20 @@ section .container .record-Btn {
   
 }
 
+
+section .container .record-Btn .far {
+  /* background: red; */
+  font-size: 90px;
+  margin-left: 20px;
+}
+section .container .record-Btn div {
+  font-size: 30px;
+  margin-top: 10px;
+  margin-right: 20px;
+}
+
 section .container .record-Btn:hover {
-  background: rgb(255, 175, 28);
+  background: yellowgreen;
   color: #000;
 }
 section .container .map-Btn {
@@ -105,6 +117,14 @@ section .container .map-Btn {
   /* width: max-content; */
 
   
+}
+section .container .map-Btn .far {
+  /* background: red; */
+  font-size: 90px;
+}
+section .container .map-Btn div {
+  font-size: 30px;
+  margin-top: 10px;
 }
 section .container .map-Btn:hover {
   background: rgb(255, 175, 28);
@@ -124,7 +144,15 @@ height: 230px;
 display: inline-block; 
 /* width: max-content; */
 }
+section .container .cal-Btn .far {
+  /* background: red; */
+  font-size: 90px;
+}
+section .container .cal-Btn div {
+  font-size: 30px;
+  margin-top: 10px;
+}
 section .container .cal-Btn:hover {
-  background: rgb(255, 175, 28);
+  background: rgb(255, 137, 231);
   color: #000;
 }
