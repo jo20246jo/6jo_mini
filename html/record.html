@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Document</title>
         <link rel="stylesheet" href="../css/record.css" />
+        <script src="../js/record.js" defer></script>
     </head>
     <body>
         <div class="wrap">
@@ -17,9 +18,9 @@
                         <div><span class="time">시간</span></div>
                     </li>
                     <li class="input record">
-                        <div><input type="text" placeholder="0404"></div>
-                        <div><input type="text" placeholder="(km)"></div>
-                        <div><input type="text" placeholder="(hour)"></div>
+                        <div><input id="date-input" type="number" placeholder="0404"></div>
+                        <div><input id="length-input" type="number" placeholder="(km)"></div>
+                        <div><input id="time-input" type="number" placeholder="(hour)"></div>
                     </li>
                     <button class="complete">기록하기</button>
                 </ul>
@@ -50,8 +51,8 @@
                     </li>
                 </ul>
             </section>
-            <a class="moveto-cal" href="#"><span>캘린더 보러가기</span></a>
-            <a class="moveto-back" href="#"><span>뒤로 가기</span></a>
+            <a class="moveto-cal" href="./maincalender.html"><span>캘린더 보러가기</span></a>
+            <a class="moveto-back" href="./choice.html"><span>포탈로가기</span></a>
         </div>
     </body>
 </html>
