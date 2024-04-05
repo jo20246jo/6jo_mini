@@ -1,0 +1,209 @@
+@import url("../common.css");
+@import url("./sub.css");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap");
+
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: 300;
+  font-family: "Noto Sans KR", sans-serif;
+}
+ul {
+  list-style: none;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+/* css작업 */
+
+.container {
+  width: 1200px;
+  margin: 0 auto;
+  background: #fff;
+
+  /* background: #999999; */
+  display: flex;
+}
+
+/* class 추가 포인트 */
+
+.day-color-opacity {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.weekend-color {
+  color: #e85e36;
+}
+
+/* js class 추가 */
+
+/* 클릭하면 회색 배경으로 변경됨 */
+.click-bg {
+  background-color: #eeeeee;
+}
+
+/* 일정 추가되면 원형으로 변경됨 */
+
+.circle {
+  width: 35px;
+  height: 35px;
+  text-align: center;
+
+  background: #1a73e8;
+  border-radius: 50%;
+  color: #fff;
+}
+
+/* header */
+
+header {
+  height: 70px;
+  background: #1a73e8;
+  /* border-bottom: 1px solid #e6e6e6; */
+}
+
+.inner {
+  width: 1200px;
+  margin: 0 auto;
+  align-items: center;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.add-icon {
+  display: flex;
+  align-items: center;
+}
+
+.add-icon p {
+  color: #fff;
+  margin-right: 15px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.fas.fa-plus {
+  color: #1a73e8;
+  font-size: 20px;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  background: #fff;
+  border-radius: 40px;
+}
+
+/* sub 큰틀 */
+.sub {
+  /* background: #d1cece; */
+  width: 300px;
+  border-left: 1px solid #e6e6e6;
+  /* border-right: none; */
+}
+
+/* 내가 작업할 메인 */
+.main {
+  width: 900px;
+  /* background-color: #dcdcdc; */
+  /* border: 1px solid #e6e6e6; */
+}
+
+.main-top {
+  /* background-color: #999999; */
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px 0;
+}
+
+.main-top p {
+  font-size: 32px;
+  font-weight: 600;
+  color: #1a73e8;
+}
+
+/* main-top button */
+.main-top-button {
+  display: flex;
+  border: 1px solid #e6e6e6;
+  border-radius: 15px;
+}
+
+.main-top-button i {
+  padding: 10px 20px;
+  color: #939393;
+}
+
+.main-top-button i:hover {
+  color: #5e5e5e;
+}
+
+/* main-calender ul.week 요일 부분 */
+ul.week {
+  display: flex;
+  width: 100%;
+}
+
+.week li {
+  width: calc(100% / 7);
+  padding: 8px 15px;
+  border: 1px solid #e6e6e6;
+  border-left: none;
+  border-bottom: none;
+}
+
+.week li:nth-child(7) {
+  border-right: none;
+}
+
+.week li p {
+  color: #939393;
+  font-size: 13px;
+}
+
+/* ul.date 일 부분 */
+.date {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.date li {
+  width: calc(100% / 7);
+  height: 120px;
+  padding: 8px;
+  border: 1px solid #e6e6e6;
+  border-left: none;
+  border-bottom: none;
+}
+
+.daybox-day p {
+  width: 27px;
+  height: 27px;
+  text-align: center;
+  line-height: 25px;
+}
+
+.date li:nth-child(1),
+.date li:nth-child(2),
+.date li:nth-child(3),
+.date li:nth-child(4),
+.date li:nth-child(5),
+.date li:nth-child(6),
+.date li:nth-child(7) {
+  border-top: none;
+}
+
+.date li:nth-child(7n) {
+  border-right: none;
+}
+
+.date li:nth-child(7n + 1) {
+  color: #e85e36;
+}
