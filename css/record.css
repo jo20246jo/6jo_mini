@@ -84,10 +84,48 @@ section.records {
     display: flex;
     overflow: hidden;
 }
+/*  */
+section.records ul {
+    margin: 0 auto;
+}
+section.records li.line div{
+    flex: auto;
+    text-align: center;
+    font-size: 24px;
+    color: #fff;
+}
+section.records li.line div.blank {
+    color: #fbb;
+}
+section.records li.line {
+    background: #1a73e8;
+}
+section.records li {
+    display: flex;
+    height: 40px;
+    width: 450px;
+    background: #8cb9f3;
+    border-radius: 10px;
+    align-items: center;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+section.records li input{
+    background: #8cb9f3;
+    display: inline-block;
+    height: 40px;
+}
+section.records .record-list li div{
+    flex: auto;
+}
+section.records .record-list li button {
+    background: #fbb;
+}
 
-/* >.input-list */
+
+
+/*
 section.records .input-list {
-    /* border: 1px solid #000; */
     padding: 10px;
 }
 section.records .input-list .complete {
@@ -99,7 +137,6 @@ section.records .input-list .complete {
     
 }
 section.records .input-list .record {
-    /* border: 1px solid #000; */
     display: flex;
     width: 480px;
     height: 25px;
@@ -107,7 +144,6 @@ section.records .input-list .record {
 section.records .input-list .record div {
     border: 1px solid #000;
     flex: auto;
-    /* width: 135px; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -118,9 +154,7 @@ section.records .input-list .line {
 section.records .input-list .input input {
     width: 100%;
 }
-/* >.record-list */
 section.records .record-list {
-    /* border: 1px solid #fff; */
     padding: 10px;
     overflow: auto;
     height: 500px;
@@ -148,6 +182,7 @@ section.records .record-list .ex-record div {
     justify-content: center;
     align-items: center;
 }
+*/
 /* 이동버튼 */
 .wrap .moveto-cal {
     margin-top: 50px;
