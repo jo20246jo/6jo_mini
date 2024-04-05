@@ -1,6 +1,8 @@
 @import url("../common.css");
 @import url("./sub.css");
+/* 글꼴 Noto */
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 
 /* reset */
 * {
@@ -9,6 +11,7 @@
   box-sizing: border-box;
   font-size: 14px;
   font-weight: 300;
+  font-family: "Noto Sans", sans-serif;
   font-family: "Noto Sans KR", sans-serif;
 }
 ul {
@@ -51,8 +54,8 @@ a {
 /* 일정 추가되면 원형으로 변경됨 */
 
 .circle {
-  width: 35px;
-  height: 35px;
+  width: 30px;
+  height: 30px;
   text-align: center;
 
   background: #1a73e8;
@@ -75,7 +78,30 @@ header {
   height: 100%;
   display: flex;
   justify-content: space-between;
+  padding-top: 7px;
 }
+
+/* gnb */
+
+.gnb {
+  display: flex;
+}
+
+.gnb i {
+  color: #8cb9f3;
+  font-size: 22px;
+}
+
+.gnb li {
+  margin-right: 80px;
+}
+
+.gnb li:hover a i {
+  color: #fff;
+}
+
+/* add icon */
+
 .add-icon {
   display: flex;
   align-items: center;
@@ -84,16 +110,16 @@ header {
 .add-icon p {
   color: #fff;
   margin-right: 15px;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 500;
 }
 
 .fas.fa-plus {
   color: #1a73e8;
-  font-size: 20px;
-  width: 35px;
-  height: 35px;
-  line-height: 35px;
+  font-size: 16px;
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
   text-align: center;
   background: #fff;
   border-radius: 40px;
@@ -116,16 +142,16 @@ header {
 
 .main-top {
   /* background-color: #999999; */
-  height: 100px;
+  height: 90px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 20px 0;
+  padding: 15px 20px 0 0;
 }
 
 .main-top p {
-  font-size: 32px;
-  font-weight: 600;
+  font-size: 29px;
+  font-weight: 400;
   color: #1a73e8;
 }
 
@@ -137,7 +163,7 @@ header {
 }
 
 .main-top-button i {
-  padding: 10px 20px;
+  padding: 8px 13px;
   color: #939393;
 }
 
