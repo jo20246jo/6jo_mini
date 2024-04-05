@@ -1,0 +1,123 @@
+@import url('../common.css');
+/* wrap style */
+.wrap {
+    width: 1200px;
+    height: 100vh;
+    margin: 0 auto;
+    position: relative;
+    /* background: #fbd; */
+}
+
+/* #page-name style*/
+#page-name {
+    margin-top: 60px;
+    font-size: 60px;
+    font-weight: 700;
+    color: #bdf;
+}
+
+/* section.records style*/
+section.records {
+    /* background: dodgerblue; */
+    height: 500px;
+    margin-top: 100px;
+    display: flex;
+    overflow: hidden;
+}
+
+/* >.input-list */
+section.records .input-list {
+    /* border: 1px solid #000; */
+    padding: 10px;
+}
+section.records .input-list .complete {
+    background: #ddd;
+    width: 120px;
+    text-align: center;
+    margin: 10px 0;
+    padding: 5px;
+    
+}
+section.records .input-list .record {
+    /* border: 1px solid #000; */
+    display: flex;
+    width: 480px;
+    height: 25px;
+}
+section.records .input-list .record div {
+    border: 1px solid #000;
+    flex: auto;
+    /* width: 135px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+section.records .input-list .line {
+    background: #ddd;
+}
+section.records .input-list .input input {
+    width: 100%;
+}
+/* >.record-list */
+section.records .record-list {
+    /* border: 1px solid #fff; */
+    padding: 10px;
+    overflow: auto;
+    height: 500px;
+}
+section.records .record-list .line {
+    background: #ddd;
+    
+}
+section.records .record-list .line .blank {
+    width: 75px;
+}
+section.records .record-list .ex-record {
+    display: flex;
+    width: 555px;
+    height: 25px;
+}
+section.records .record-list .ex-record .remove-record{
+    width: 75px;
+    border: 1px solid #000;
+}
+section.records .record-list .ex-record div {
+    border: 1px solid #000;
+    width: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* 이동버튼 */
+.wrap .moveto-cal {
+    margin-top: 50px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    padding: 20px 80px;
+    background: #ff8342;
+    color: #fff;
+    font-weight: 700;
+    border-radius: 15px;
+    text-align: center;
+}
+.wrap .moveto-cal span{
+    display: block;
+    width: 120px;
+}
+.wrap .moveto-back {
+    margin-top: 150px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    padding: 20px 80px;
+    background: #fbd;
+    color: #fff;
+    font-weight: 700;
+    border-radius: 15px;
+    text-align: center;
+}
+.wrap .moveto-back span{
+    display: block;
+    width: 120px;
+}
