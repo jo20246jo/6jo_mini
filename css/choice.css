@@ -6,7 +6,7 @@ div.wrap {
   width: 1200px;
   height: 100vh;
   margin: 0 auto;
-  background-color: rgb(240, 240, 240);
+  background-color: #1A73E8;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,45 +15,55 @@ div.wrap {
 
 div section {
   /* border: 2px solid #000; */
-  background: #FFF;
   border-radius: 30px;
-  width: 60%;
-  height: 70%;
+  width: 80%;
+  height: 80%;
   display: flex;
   ;
   flex-direction: column;
 }
 .header {
   /* border: 2px solid #000; */
-  width: 80%;
-  height: 20%;
+  width: 100%;
+  height: 10%;
   color: rgb(131, 131, 131);
-  margin-top: 10%;
-  margin-bottom: 5%;
-  margin-left: 10%;
-  font-size: 1.5em;
+  margin: 5% 0;
+  padding: 5% auto;
+  
+  font-size: 2em;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #fff;
+  
   
 }
 section .container {
   /* border: 2px solid #000; */
-  width: 80%;
-  margin-left: 10%;
-  height: 100%;
-  background-color: #fff;
+  width: 90%;
+  margin-left: 5%;
+  height: 30%;
+  
+  
 
 }
 section .container h1 {
+  font-size: 4em;
+  font-family: "Noto Sans", sans-serif;
+  /* letter-spacing: 2px; */
+  color: #fff;
+  font-weight: bold;
+}
+section .container h2 {
   /* border: 2px solid #000; */
   border-radius: 10px;
-  display: flex;
-  justify-content: center;
+  /* display: flex; */
+  /* justify-content: center; */
   align-items: center;
-  height: 150px;
-  font-size: 3em;
+  color: #FFF;
+  height: 70px;
+  font-weight: 100px;
+  padding-top: 20px;
+  font-size: 1.5em;
 }
 
 section .container .sub-container {
@@ -63,31 +73,56 @@ section .container .sub-container {
   height: 100%;
 }
 
-section .container .recordBtn {
+section .container .record-Btn {
   /* border: 2px solid #000; */
   margin-top: 10%;
-  margin-right: 40%;
+  margin-right: 5%;
   background: rgb(240, 240, 240);
-  padding: 8%;
-  border-radius: 10px;
-  display: inline-block; /* 인라인 요소를 블록 요소로 변환하여 너비와 높이 속성이 적용되도록 함 */
-  width: max-content;
+  width: 230px;
+  height: 230px;
+  border-radius: 50%;
+  display: inline-block; 
+  align-content: center;
+  /* width: max-content; */
 
   
 }
-section .container .recordBtn:hover {
+
+section .container .record-Btn:hover {
   background: rgb(255, 175, 28);
   color: #000;
 }
+section .container .map-Btn {
+  /* border: 2px solid #000; */
+  margin-top: 10%;
+  margin-right: 5%;
+  background: rgb(240, 240, 240);
+  width: 230px;
+  height: 230px;
+  border-radius: 50%;
+  align-content: center;
+  display: inline-block; /* 인라인 요소를 블록 요소로 변환하여 너비와 높이 속성이 적용되도록 함 */
+  /* width: max-content; */
+
+  
+}
+section .container .map-Btn:hover {
+  background: rgb(255, 175, 28);
+  color: #000;
+}
+
 section .container .cal-Btn {
 /* border: 2px solid #000; */
-border-radius: 10px;
+border-radius: 50%;
 background: rgb(240, 240, 240);
 margin-top: 10%;
-padding: 8%;
-padding-left: 9%;
-display: inline-block; /* 인라인 요소를 블록 요소로 변환하여 너비와 높이 속성이 적용되도록 함 */
-width: max-content;
+display: flex;
+/* align-items: center; */
+align-content: center;
+width: 230px;
+height: 230px;
+display: inline-block; 
+/* width: max-content; */
 }
 section .container .cal-Btn:hover {
   background: rgb(255, 175, 28);
