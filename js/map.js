@@ -1,6 +1,7 @@
 // 첫화면
 alert("저장하고 싶은 러닝 스팟을 저장해 주세요!");
 
+
 // Google Maps 초기 셋팅 함수
 async function initMap() {
   // Request needed libraries.
