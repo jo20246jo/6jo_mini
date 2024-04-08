@@ -28,8 +28,10 @@ document.querySelector(".input-list").addEventListener("click", (e) => {
     const newDate = document.querySelector('#date-input').value;
     const newLength = document.querySelector('#length-input').value;
     const newTime = document.querySelector('#time-input').value;
+    console.log(newDate.length);
     // if문으로입력값 비는게 있는지 체크
-    if(!newDate.length && !newLength.length && !newTime.length) return;
+    if(newDate.length !== 4 || !newLength.length || !newTime.length) return;
+    
     // console.log(e.target);
     // 각 인풋에 있는 밸류 객체로 배열에 저장하고
     const newRecord = {};
@@ -48,7 +50,7 @@ document.querySelector(".input-list").addEventListener("click", (e) => {
     // li태그로 만들어서.record-list에 어펜드차일드
     const $newLi = document.createElement('li');
     $newLi.innerHTML = 
-    `<div><span class="date">${newDate}</span></div>
+    `<div><span class="date">${newDate[0] + newDate[1]}월${newDate[2] + newDate[3]}일</span></div>
     <div><span class="length">${newLength}km</span></div>
     <div><span class="time">${newTime}시간</span></div>
     <button class="remove-record">삭제하기</button>`;
