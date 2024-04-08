@@ -1,3 +1,11 @@
+
+
+
+
+
+
+
+
 // ==============변수..?==============//
 let recordList = [
     // {
@@ -20,6 +28,32 @@ let recordList = [
     // },
 ];
 let recordId = 3;
+let getRecordArr = window.localStorage.getItem("records"); //로컬에서 받기
+    let getArrRecordArr = JSON.parse(getRecordArr); //다시 코드로 변환
+    if (!recordList.length && !!getArrRecordArr) {
+
+        recordList = getArrRecordArr;
+        for (let i of recordList) {
+            let timeSet = +i.time;
+            let hourMinute = "";
+            if (timeSet >= 60) {
+                hourMinute = `${Math.floor(timeSet / 60)}시간${timeSet % 60}분`;
+            } else {
+                hourMinute = `${timeSet}분`;
+            }
+
+            const $newLi = document.createElement("li");
+            $newLi.innerHTML = `<div><span class="date">${
+                i.date[0] + i.date[1]
+            }월${i.date[2] + i.date[3]}일</span></div>
+            <div><span class="length">${i.length}km</span></div>
+            <div><span class="time">${hourMinute}</span></div>
+            <button class="remove-record">삭제하기</button>`;
+            $newLi.dataset.id = recordId;
+            $newLi.classList.add("ex-record");
+            document.querySelector(".record-list").appendChild($newLi);
+        }
+    }
 // ==============함수실행==============//
 
 // 기록하기 버튼 클릭시 이벤트.
@@ -90,34 +124,34 @@ document.querySelector(".record-list").addEventListener("click", (e) => {
     let recordArr = JSON.stringify(recordList); //문자열로 변환
     window.localStorage.setItem("records", recordArr); //로컬에 저장
 });
-setInterval(() => {
-    let getRecordArr = window.localStorage.getItem("records"); //로컬에서 받기
-    let getArrRecordArr = JSON.parse(getRecordArr); //다시 코드로 변환
-    if (!recordList.length) {
-        recordList = getArrRecordArr;
-        for (let i of recordList) {
-            let timeSet = +i.time;
-            let hourMinute = "";
-            if (timeSet >= 60) {
-                hourMinute = `${Math.floor(timeSet / 60)}시${timeSet % 60}분`;
-            } else {
-                hourMinute = `${timeSet}분`;
-            }
+// setInterval(() => {
+//     let getRecordArr = window.localStorage.getItem("records"); //로컬에서 받기
+//     let getArrRecordArr = JSON.parse(getRecordArr); //다시 코드로 변환
+//     if (!recordList.length) {
+//         recordList = getArrRecordArr;
+//         for (let i of recordList) {
+//             let timeSet = +i.time;
+//             let hourMinute = "";
+//             if (timeSet >= 60) {
+//                 hourMinute = `${Math.floor(timeSet / 60)}시${timeSet % 60}분`;
+//             } else {
+//                 hourMinute = `${timeSet}분`;
+//             }
 
-            const $newLi = document.createElement("li");
-            $newLi.innerHTML = `<div><span class="date">${
-                i.date[0] + i.date[1]
-            }월${i.date[2] + i.date[3]}일</span></div>
-            <div><span class="length">${i.length}km</span></div>
-            <div><span class="time">${hourMinute}</span></div>
-            <button class="remove-record">삭제하기</button>`;
-            $newLi.dataset.id = recordId;
-            $newLi.classList.add("ex-record");
-            document.querySelector(".record-list").appendChild($newLi);
-        }
-    }
-    // let recordArr = JSON.stringify(recordList); //문자열로 변환
-    // window.localStorage.setItem("records", recordArr); //로컬에 저장
+//             const $newLi = document.createElement("li");
+//             $newLi.innerHTML = `<div><span class="date">${
+//                 i.date[0] + i.date[1]
+//             }월${i.date[2] + i.date[3]}일</span></div>
+//             <div><span class="length">${i.length}km</span></div>
+//             <div><span class="time">${hourMinute}</span></div>
+//             <button class="remove-record">삭제하기</button>`;
+//             $newLi.dataset.id = recordId;
+//             $newLi.classList.add("ex-record");
+//             document.querySelector(".record-list").appendChild($newLi);
+//         }
+//     }
+//     let recordArr = JSON.stringify(recordList); //문자열로 변환
+//     window.localStorage.setItem("records", recordArr); //로컬에 저장
 
-    // console.log(getArrRecordArr);
-}, 3000);
+//     // console.log(getArrRecordArr);
+// }, 3000);
