@@ -1,25 +1,9 @@
-
 .sub_mini_calender {
   padding: 30px 0 0 40px;
-
-
-
-
-.header .logo {
-  background-color: navy;
-  color: #e6e6e6;
-  padding: 30px;
-  font-size: 30px;
-  font-weight: 700;
-  text-align: center;
 }
 
 .sub #wrap_calendar {
-  flex: 0 0 auto;
-  height: 60px;
-}
-#wrap_calendar {
-  padding: 20px 20px 0;
+  margin-bottom: 20px;
 }
 
 #wrap_calendar .nav_calendar {
@@ -28,57 +12,46 @@
 }
 
 .nav_calendar {
-  position: relative;
-  width: 100%;
+  /* position: relative; */
+  /* text-align: center; */
+  /* width: 100%; */
   margin-bottom: 10px;
-  text-align: center;
+  display: flex;
+  justify-content: space-between;
 }
 
 .tit_calendar {
-  position: absolute;
-  flex: 1 1 auto;
-  padding-left: 3px;
-  text-align: left;
-  font-size: 18px;
-  left: 117px;
-  top: 9px;
-  color: rgb(26, 115, 232) ;
-  font-weight: 400;
-}
+  /* position: absolute; */
+  /* flex: 1 1 auto; */
+  /* padding-left: 3px; */
+  /* left: 117px;
+  top: 9px; */
+  /* text-align: left; */
 
-.event_day_wrap .tit_calendar {
-  top: 400px;
-  left: 140px;
-}
-.event_day_wrap .list_agenda .area_tit {
-  position: relative;
-}
-.event_day_wrap .list_agenda .event_content {
-  position: absolute;
-  top: 70px;
-  left: 140px;
-  font-size: 15px;
-  padding: 10px;
-  border-left: 4px solid rgba(148, 148, 148, 0.788);
-  cursor: pointer;
+  font-size: 18px;
+  color: rgb(26, 115, 232);
+  font-weight: 400;
 }
 
 button {
   border: none;
   background-color: transparent;
+  color: #939393;
+  font-size: 13px;
 }
 
-#wrap_calendar .nav_calendar .btn_prev {
-  position: absolute;
+.btn_prev {
+  /* position: absolute;
   top: 6px;
-  right: 10px;
+  right: 10px; */
+  margin-right: 20px;
 }
 
-#wrap_calendar .nav_calendar .btn_next {
+/* #wrap_calendar .nav_calendar .btn_next {
   position: absolute;
   top: 6px;
   right: -11px;
-}
+} */
 
 .line {
   border-bottom: 1px solid gray;
@@ -86,16 +59,9 @@ button {
   opacity: 0.2;
 }
 
-.wrap_calendar .area_calendar {
+/* .wrap_calendar .area_calendar {
   height: auto;
-}
-
-.area_calendar {
-  display: flex;
-  /* width: 100%;
-  height: 100%; */
-  flex-direction: column;
-}
+} */
 
 /* .wrap_calendar .area_calendar .row {
   margin-top: 2px;
@@ -103,35 +69,34 @@ button {
 } */
 
 .area_calendar .row {
-  margin-bottom: 10px;
-  position: relative;
-  display: flex;
-  flex: 0 0 22px;
-  left: 30px;
-  
+  /* position: relative; */
+  /* flex: 0 0 22px; */
+  /* left: 30px; */
   /* justify-content: space-around; */
+  margin-bottom: 3px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .area_calendar .coulmn {
-  position: relative;
-  width: 22px;
-  height: 22px;
-  padding: 1px;
+  /* position: relative; */
+  /* padding: 1px; */
+  /* vertical-align: middle; */
+  /* box-sizing: border-box; */
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
   text-align: center;
-  vertical-align: middle;
-  box-sizing: border-box;
   cursor: pointer;
   font-weight: 400;
 }
 
 .area_calendar .sunday {
-  color: red;
-  text-decoration-color: red;
+  color: #e85e36;
 }
 
-.area_calendar .row_header .coulmn {
-  text-decoration: underline;
-  left: 110px;
+.disabled {
+  opacity: 0.2;
 }
 
 /* .area_calendar.area_day .select.today .txt_day {
@@ -139,35 +104,16 @@ button {
   background-color: rgb(26, 115, 232);
   color: #ffffff;
 } */
-.area_calendar .txt_day {
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: inline-flex;
-  justify-content: center;
-  width: 20px;
-  height: 22px;
-  border: 1px solid transparent;
-  border-radius: 50%;
-  font-size: 15px;
-  line-height: 20px;
-  text-align: center;
-  box-sizing: border-box;
-}
-
-.area_calendar .disabled .txt_day {
-  opacity: 0.2;
-}
 
 /* 기록하기 버튼 클릭하여 저장했을 시 서브 캘린더에 스탬프 찍히도록 하기 */
-.txt_day {
+/* .txt_day {
   cursor: pointer;
   position: relative;
   margin: 0 110px 0;
-}
+} */
 
-.txt_day.stamped:before {
-  content: '';
+/* .txt_day.stamped:before {
+  content: "";
   position: absolute;
   top: 50%;
   left: 50%;
@@ -176,4 +122,49 @@ button {
   height: 20px;
   border-radius: 50%;
   background-color: rgb(26, 115, 232);
+} */
+
+.circle {
+  width: 30px;
+  /* height: 30px; */
+  line-height: 30px;
+  text-align: center;
+  background: #1a73e8;
+  border-radius: 50%;
+  color: #fff;
+}
+
+/* 하단 일정 추가 부분 */
+.event_day_wrap {
+  padding: 64px 0 0 40px;
+}
+
+.event_day_wrap .event_day {
+  font-weight: 500;
+}
+
+.list_agenda {
+  width: 100%;
+  margin-top: 30px;
+  font-weight: 400;
+  border-left: 6px solid #1a73e8;
+}
+
+.area_tit {
+  padding: 8px 0 8px 10px;
+}
+
+.event_content {
+  font-size: 15px;
+  line-height: 130%;
+  width: 100%;
+}
+
+.event_memo {
+  margin-top: 8px;
+  width: 100%;
+  line-height: 150%;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
