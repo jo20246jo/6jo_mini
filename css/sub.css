@@ -98,6 +98,7 @@ button {
 .disabled {
   opacity: 0.2;
 }
+
 /* .area_calendar.area_day .select.today .txt_day {
   border-color: rgb(26, 115, 232);
   background-color: rgb(26, 115, 232);
