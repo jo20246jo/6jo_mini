@@ -28,12 +28,12 @@
                     <li class="line record">
                         <div><span class="date">날짜</span></div>
                         <div><span class="length">거리</span></div>
-                        <div><span class="time">시간</span></div>
+                        <div><span class="time">시간(분)</span></div>
                     </li>
                     <li class="input record">
-                        <div><input id="date-input" type="number" placeholder="0404"></div>
-                        <div><input id="length-input" type="number" placeholder="(km)"></div>
-                        <div><input id="time-input" type="number" placeholder="(hour)"></div>
+                        <div><input id="date-input" type="number" min="0" placeholder="0404"></div>
+                        <div><input id="length-input" type="number" min="0" placeholder="(km)"></div>
+                        <div><input id="time-input" type="number" placeholder="(minute)"></div>
                     </li>
                     <button class="complete">기록하기</button>
                 </ul>
@@ -45,7 +45,7 @@
                         <div><span class="time">시간</span></div>
                         <div class="blank">삭제</div>
                     </li>
-                    <li data-id="1" class="ex-record">
+                    <!-- <li data-id="1" class="ex-record">
                         <div><span class="date">04월04일</span></div>
                         <div><span class="length">4km</span></div>
                         <div><span class="time">1시간</span></div>
@@ -62,7 +62,7 @@
                         <div><span class="length">4km</span></div>
                         <div><span class="time">1시간</span></div>
                         <button class="remove-record">삭제하기</button>
-                    </li>
+                    </li> -->
                 </ul>
                 </div>
             </section>

@@ -88,6 +88,8 @@ section.records .scroll {
     margin: 0 auto;
     overflow-y: scroll;
     height: 500px;
+    width: 455px;
+    padding-top: 80px;
 }
 section.records .scroll::-webkit-scrollbar {
     width: 5px;
@@ -109,7 +111,7 @@ section.records li.line div{
     color: #fff;
 }
 section.records li.line div.blank {
-    color: #fbb;
+    color: #fb4;
 }
 section.records li.line {
     background: #1a73e8;
@@ -144,7 +146,7 @@ section.records .record-list li div{
     width: 110px;
 }
 section.records .record-list li button {
-    background: #fbb;
+    background: #fb4;
     margin-left: 30px;
     padding: 10px;
     border-radius: 10px;
@@ -152,9 +154,6 @@ section.records .record-list li button {
 section.records .record-list li.line {
     position: fixed;
     transform: translate(0, -80px);
-}
-section.records .record-list li:nth-child(2) {
-    margin-top: 80px;
 }
 /* 이동버튼 */
 .wrap .moveto-cal {
