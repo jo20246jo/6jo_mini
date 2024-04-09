@@ -1,16 +1,76 @@
 @import url('../common.css');
+/* header */
+
+header {
+    height: 70px;
+    background: #1a73e8;
+    /* border-bottom: 1px solid #e6e6e6; */
+  }
+  
+  .inner {
+    width: 1200px;
+    margin: 0 auto;
+    align-items: center;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 7px;
+  }
+  
+  /* gnb */
+  
+  .gnb {
+    display: flex;
+  }
+  
+  .gnb i {
+    color: #8cb9f3;
+    font-size: 22px;
+  }
+  
+  .gnb li {
+    margin-right: 80px;
+  }
+  
+  .gnb li:hover a i {
+    color: #fff;
+  }
+  /* add icon */
+
+.add-icon {
+    display: flex;
+    align-items: center;
+  }
+  
+  .add-icon p {
+    color: #fff;
+    margin-right: 15px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  
+  .fas.fa-plus {
+    color: #1a73e8;
+    font-size: 16px;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    background: #fff;
+    border-radius: 40px;
+  }
 /* wrap style */
 .wrap {
     width: 1200px;
-    height: 100vh;
+    height: 85vh;
     margin: 0 auto;
     position: relative;
-    /* background: #fbd; */
+    /* background: #eef; */
 }
 
 /* #page-name style*/
 #page-name {
-    margin-top: 60px;
+    margin-top: 40px;
     font-size: 60px;
     font-weight: 700;
     color: #bdf;
@@ -24,69 +84,76 @@ section.records {
     display: flex;
     overflow: hidden;
 }
-
-/* >.input-list */
-section.records .input-list {
-    /* border: 1px solid #000; */
-    padding: 10px;
+section.records .scroll {
+    margin: 0 auto;
+    overflow-y: scroll;
+    height: 500px;
+    width: 455px;
+    padding-top: 80px;
+}
+section.records .scroll::-webkit-scrollbar {
+    width: 5px;
+}
+section.records .scroll::-webkit-scrollbar-thumb {
+    background: #000;
+}
+section.records .scroll::-webkit-scrollbar-track {
+    background: #ddd;
+}
+/*  */
+section.records ul {
+    margin: 0 auto;
+}
+section.records li.line div{
+    flex: auto;
+    text-align: center;
+    font-size: 24px;
+    color: #fff;
+}
+section.records li.line div.blank {
+    color: #fb4;
+}
+section.records li.line {
+    background: #1a73e8;
+}
+section.records li {
+    display: flex;
+    height: 60px;
+    width: 450px;
+    background: #8cb9f3;
+    border-radius: 10px;
+    align-items: center;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+section.records li input{
+    background: #8cb9f3;
+    display: block;
+    height: 40px;
+    padding-left: 20px;
+    width: 150px;
+    border-right: 1px dotted #444;
 }
 section.records .input-list .complete {
-    background: #ddd;
-    width: 120px;
-    text-align: center;
-    margin: 10px 0;
-    padding: 5px;
-    
-}
-section.records .input-list .record {
-    /* border: 1px solid #000; */
-    display: flex;
-    width: 480px;
-    height: 25px;
-}
-section.records .input-list .record div {
-    border: 1px solid #000;
-    flex: auto;
-    /* width: 135px; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-section.records .input-list .line {
-    background: #ddd;
-}
-section.records .input-list .input input {
-    width: 100%;
-}
-/* >.record-list */
-section.records .record-list {
-    /* border: 1px solid #fff; */
+    background: #9baae4;
+    color: #666;
     padding: 10px;
-    overflow: auto;
-    height: 500px;
+    border-radius: 10px;
 }
-section.records .record-list .line {
-    background: #ddd;
-    
+section.records .record-list li div{
+    /* flex: */
+    text-align: center;
+    width: 110px;
 }
-section.records .record-list .line .blank {
-    width: 75px;
+section.records .record-list li button {
+    background: #fb4;
+    margin-left: 30px;
+    padding: 10px;
+    border-radius: 10px;
 }
-section.records .record-list .ex-record {
-    display: flex;
-    width: 555px;
-    height: 25px;
-}
-section.records .record-list .ex-record .remove-record{
-    width: 75px;
-    border: 1px solid #000;
-}
-section.records .record-list .ex-record div {
-    border: 1px solid #000;
-    width: 160px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+section.records .record-list li.line {
+    position: fixed;
+    transform: translate(0, -80px);
 }
 /* 이동버튼 */
 .wrap .moveto-cal {
