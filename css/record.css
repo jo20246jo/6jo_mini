@@ -1,5 +1,9 @@
 @import url('../common.css');
+* {
+    font-family: "Noto Sans KR", sans-serif;
+}
 /* header */
+
 
 header {
     height: 70px;
@@ -74,6 +78,7 @@ header {
     font-size: 60px;
     font-weight: 700;
     color: #bdf;
+    font-family: "Racing Sans One", sans-serif;
 }
 
 /* section.records style*/
@@ -148,8 +153,10 @@ section.records .record-list li div{
 section.records .record-list li button {
     background: #fb4;
     margin-left: 30px;
+    margin-right: 10px;
     padding: 10px;
     border-radius: 10px;
+    width: 70px
 }
 section.records .record-list li.line {
     position: fixed;
