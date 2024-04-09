@@ -1,11 +1,3 @@
-
-
-
-
-
-
-
-
 // ==============변수..?==============//
 let recordList = [
     // {
@@ -27,33 +19,35 @@ let recordList = [
     //     time: "1",
     // },
 ];
-let recordId = 3;
+let recordId = 1;
+let getIdJSON = window.localStorage.getItem("recordId");
+let getId = JSON.parse(getIdJSON);
+recordId = getIdJSON;
 let getRecordArr = window.localStorage.getItem("records"); //로컬에서 받기
-    let getArrRecordArr = JSON.parse(getRecordArr); //다시 코드로 변환
-    if (!recordList.length && !!getArrRecordArr) {
+let getArrRecordArr = JSON.parse(getRecordArr); //다시 코드로 변환
+if (!recordList.length && !!getArrRecordArr) {
+    recordList = getArrRecordArr;
+    for (let i of recordList) {
+        let timeSet = +i.time;
+        let hourMinute = "";
+        if (timeSet >= 60) {
+            hourMinute = `${Math.floor(timeSet / 60)}시간${timeSet % 60}분`;
+        } else {
+            hourMinute = `${timeSet}분`;
+        }
 
-        recordList = getArrRecordArr;
-        for (let i of recordList) {
-            let timeSet = +i.time;
-            let hourMinute = "";
-            if (timeSet >= 60) {
-                hourMinute = `${Math.floor(timeSet / 60)}시간${timeSet % 60}분`;
-            } else {
-                hourMinute = `${timeSet}분`;
-            }
-
-            const $newLi = document.createElement("li");
-            $newLi.innerHTML = `<div><span class="date">${
-                i.date[0] + i.date[1]
-            }월${i.date[2] + i.date[3]}일</span></div>
+        const $newLi = document.createElement("li");
+        $newLi.innerHTML = `<div><span class="date">${i.date[0] + i.date[1]}월${
+            i.date[2] + i.date[3]
+        }일</span></div>
             <div><span class="length">${i.length}km</span></div>
             <div><span class="time">${hourMinute}</span></div>
             <button class="remove-record">삭제하기</button>`;
-            $newLi.dataset.id = recordId;
-            $newLi.classList.add("ex-record");
-            document.querySelector(".record-list").appendChild($newLi);
-        }
+        $newLi.dataset.id = recordId;
+        $newLi.classList.add("ex-record");
+        document.querySelector(".record-list").appendChild($newLi);
     }
+}
 // ==============함수실행==============//
 
 // 기록하기 버튼 클릭시 이벤트.
@@ -102,6 +96,8 @@ document.querySelector(".input-list").addEventListener("click", (e) => {
     document.querySelector(".record-list").appendChild($newLi);
     let recordArr = JSON.stringify(recordList); //문자열로 변환
     window.localStorage.setItem("records", recordArr); //로컬에 저장
+    let recordIdJSON = JSON.stringify(recordId);// id값 유지용 변환
+    window.localStorage.setItem("recordId", recordIdJSON);//id값 유지용 저장
 });
 document.querySelector("li.input.record").addEventListener("keyup", (e) => {
     if (e.key !== "Enter") return;
