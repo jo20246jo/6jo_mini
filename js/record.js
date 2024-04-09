@@ -44,7 +44,7 @@ if (!recordList.length && !!getArrRecordArr) {
             <div><span class="time">${hourMinute}</span></div>
             <div><span>${(+timeSet / +i.length).toFixed(2)}</span></div>
             <button class="remove-record">삭 제</button>`;
-        $newLi.dataset.id = recordId;
+        $newLi.dataset.id = i.id;
         $newLi.classList.add("ex-record");
         document.querySelector(".record-list").appendChild($newLi);
     }
@@ -108,7 +108,7 @@ document.querySelector("li.input.record").addEventListener("keyup", (e) => {
 
 document.querySelector(".record-list").addEventListener("click", (e) => {
     if (!e.target.matches(".remove-record")) return;
-    // console.log(e.target.parentElement);
+    console.log(e.target.parentElement.dataset.id);
 
     // id값 연동을 통해 배열의 객체또한 제거 할 예정
     const index = recordList.findIndex(
