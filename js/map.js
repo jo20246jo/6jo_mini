@@ -2,7 +2,7 @@
 alert("저장하고 싶은 러닝 스팟을 저장해 주세요!");
 
 
-// Google Maps 초기 셋팅 함수
+// Google Maps 초기 셋팅 함수 Google에서 제공한 가이드 참조
 async function initMap() {
   // Request needed libraries.
   const { Map } = await google.maps.importLibrary("maps");
@@ -70,3 +70,8 @@ document.querySelector(".fas.fa-plus").addEventListener("click", () => {
   alert("로컬 스토리지가 삭제되었습니다. 페이지를 새로고침합니다.");
   location.reload(); // 페이지를 새로고침합니다.
 });
+
+
+
+/////  ========   /////
+
