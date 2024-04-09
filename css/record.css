@@ -1,5 +1,9 @@
 @import url('../common.css');
+* {
+    font-family: "Noto Sans KR", sans-serif;
+}
 /* header */
+
 
 header {
     height: 70px;
@@ -74,6 +78,7 @@ header {
     font-size: 60px;
     font-weight: 700;
     color: #bdf;
+    font-family: "Racing Sans One", sans-serif;
 }
 
 /* section.records style*/
