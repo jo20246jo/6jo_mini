@@ -42,7 +42,8 @@ if (!recordList.length && !!getArrRecordArr) {
         }일</span></div>
             <div><span class="length">${i.length}km</span></div>
             <div><span class="time">${hourMinute}</span></div>
-            <button class="remove-record">삭제하기</button>`;
+            <div><span>${(+timeSet / +i.length).toFixed(2)}</span></div>
+            <button class="remove-record">삭 제</button>`;
         $newLi.dataset.id = recordId;
         $newLi.classList.add("ex-record");
         document.querySelector(".record-list").appendChild($newLi);
@@ -90,14 +91,15 @@ document.querySelector(".input-list").addEventListener("click", (e) => {
     }일</span></div>
     <div><span class="length">${newLength}km</span></div>
     <div><span class="time">${hourMinute}</span></div>
-    <button class="remove-record">삭제하기</button>`;
+    <div><span>${(+newTime / +newLength).toFixed(2)}</span></div>
+    <button class="remove-record">삭 제</button>`;
     $newLi.dataset.id = recordId;
     $newLi.classList.add("ex-record");
     document.querySelector(".record-list").appendChild($newLi);
     let recordArr = JSON.stringify(recordList); //문자열로 변환
     window.localStorage.setItem("records", recordArr); //로컬에 저장
-    let recordIdJSON = JSON.stringify(recordId);// id값 유지용 변환
-    window.localStorage.setItem("recordId", recordIdJSON);//id값 유지용 저장
+    let recordIdJSON = JSON.stringify(recordId); // id값 유지용 변환
+    window.localStorage.setItem("recordId", recordIdJSON); //id값 유지용 저장
 });
 document.querySelector("li.input.record").addEventListener("keyup", (e) => {
     if (e.key !== "Enter") return;
