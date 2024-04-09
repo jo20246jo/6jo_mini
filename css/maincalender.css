@@ -110,7 +110,7 @@ header {
 /* 내가 작업할 메인 */
 .main {
   width: 900px;
-  position: relative;
+  /* position: relative; */
   /* background-color: #dcdcdc; */
   /* border: 1px solid #e6e6e6; */
 }
@@ -119,20 +119,23 @@ header {
 
 .modal-overlay {
   position: absolute;
+  z-index: 999;
   top: 170px;
   left: 370px;
+  width: 340px;
+  height: 275px;
   right: 0;
   bottom: 0;
-  /* visibility: hidden; */
+  display: none;
   /* 기본적으로 숨김 */
 }
 
-.modal-overlay:not(.hidden) {
-  visibility: visible;
+.show {
+  display: block;
 }
 
 .modal-content {
-  width: 340px;
+  /* width: 340px; */
   /* height: 270px; */
   background: white;
   border: 1px solid #eeeeee;
@@ -308,4 +311,21 @@ ul.week {
   background: #1a73e8;
   border-radius: 50%;
   color: #fff;
+}
+
+.memo-text-box {
+  color: #fff;
+  background: #1a73e8;
+  border-radius: 3px;
+  margin-top: 5px;
+  font-size: 12px;
+  padding: 5px;
+}
+
+.memo-text-box p {
+  color: #fff;
+  font-weight: 400;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }

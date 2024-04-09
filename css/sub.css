@@ -27,7 +27,6 @@
   /* left: 117px;
   top: 9px; */
   /* text-align: left; */
-
   font-size: 18px;
   color: rgb(26, 115, 232);
   font-weight: 400;
@@ -106,33 +105,49 @@ button {
 } */
 
 /* 기록하기 버튼 클릭하여 저장했을 시 서브 캘린더에 스탬프 찍히도록 하기 */
-/* .txt_day {
+.txt_day {
   cursor: pointer;
   position: relative;
-  margin: 0 110px 0;
-} */
+  z-index: 999;
+  /* margin: 0 110px 0; */
+}
 
-/* .txt_day.stamped:before {
+.txt_day.stamped::before {
   content: "";
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 20px;
-  height: 20px;
+  /* top: 50%;*/
+  left: -35%;
+  /* transform: translate(-50%, -50%); */
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   background-color: rgb(26, 115, 232);
+  z-index: -10;
+  color: white;
+}
+
+/*.blue_bg {
+  content: "";
+  position: absolute;
+  /* top: 50%;*/
+/* left: -35%;
+  /* transform: translate(-50%, -50%); */
+/* width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: rgb(26, 115, 232);
+  color: white;
 } */
 
-.circle {
-  width: 30px;
-  /* height: 30px; */
+/* .circle {
+  width: 25px;
+  /* height: 30px; 
   line-height: 30px;
   text-align: center;
   background: #1a73e8;
   border-radius: 50%;
   color: #fff;
-}
+} */
 
 /* 하단 일정 추가 부분 */
 .event_day_wrap {
@@ -148,6 +163,14 @@ button {
   margin-top: 30px;
   font-weight: 400;
   border-left: 6px solid #1a73e8;
+  visibility: hidden;
+  transform: translateY(50%);
+}
+
+.agenda_show {
+  visibility: visible;
+  transform: translate(0, 0);
+  transition: 1s;
 }
 
 .area_tit {
@@ -167,4 +190,11 @@ button {
 
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+#stamp {
+  display: inline-block;
+  color: rgb(26, 115, 232);
+  font-size: 12px;
+  opacity: 0.7;
 }
