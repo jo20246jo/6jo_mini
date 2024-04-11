@@ -107,3 +107,14 @@ div.wrap .container .sub-content {
   height: 70%;
   opacity: 0.8;
 }
+
+header #user-name {
+  position: relative;
+  right: -140%;
+  align-content: center;
+  /* top: 7px; */
+  font-size: 14px;
+  height: 30px;
+  color: #fff;
+  /* background: red; */
+}
