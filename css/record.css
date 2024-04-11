@@ -65,7 +65,7 @@ header {
   }
   header #user-name {
     position: relative;
-    right: -140%;
+    right: -120%;
     align-content: center;
     font-size: 14px;
     height: 30px;

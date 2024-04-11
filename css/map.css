@@ -112,7 +112,7 @@ div.wrap .container .sub-content {
 
 header #user-name {
   position: relative;
-  right: -140%;
+  right: -100%;
   align-content: center;
   /* top: 7px; */
   font-size: 14px;
