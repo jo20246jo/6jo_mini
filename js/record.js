@@ -49,7 +49,14 @@ if (!recordList.length && !!getArrRecordArr) {
         document.querySelector(".record-list").appendChild($newLi);
     }
 }
+function setName() {
+    const userName = localStorage.getItem("userName") || "회원";
+    document.querySelector(
+        "#user-name"
+    ).textContent = `${userName}님 환영합니다.`;
+}
 // ==============함수실행==============//
+setName();
 
 // 기록하기 버튼 클릭시 이벤트.
 document.querySelector(".input-list").addEventListener("click", (e) => {
