@@ -99,7 +99,7 @@ section.records {
 }
 section.records .scroll {
     margin: 0 auto;
-    overflow-y: scroll;
+    overflow-y: auto;
     height: 500px;
     width: 455px;
     padding-top: 80px;
@@ -169,37 +169,4 @@ section.records .record-list li button {
 section.records .record-list li.line {
     position: absolute;
     transform: translate(0, -80px);
-}
-/* 이동버튼 */
-.wrap .moveto-cal {
-    margin-top: 50px;
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, 0);
-    padding: 20px 80px;
-    background: #ff8342;
-    color: #fff;
-    font-weight: 700;
-    border-radius: 15px;
-    text-align: center;
-}
-.wrap .moveto-cal span{
-    display: block;
-    width: 120px;
-}
-.wrap .moveto-back {
-    margin-top: 150px;
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, 0);
-    padding: 20px 80px;
-    background: #fbd;
-    color: #fff;
-    font-weight: 700;
-    border-radius: 15px;
-    text-align: center;
-}
-.wrap .moveto-back span{
-    display: block;
-    width: 120px;
 }
