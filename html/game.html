@@ -346,6 +346,7 @@
             enemyRect.top < bulletRect.bottom &&
             enemyRect.bottom > bulletRect.top
           ) {
+            gameOverAlertShown = true; // alert가 표시되었음을 표시
             let retry = confirm(`게임 오버!  기록:  ${document.getElementById("timer").textContent} \n한판 더 할거면 확인`);
             
             if (!retry) {
@@ -353,6 +354,7 @@
             } else  {
               location.reload(); // 새로고침
             }
+            
           }
         }
       }
