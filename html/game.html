@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"rel="stylesheet"/>
     <style>
       div.wrap {
         display: flex;
@@ -24,11 +27,13 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 20px;
-        height: 20px;
-        border: 2px solid red;
+        background-image: url("../img/spaceship.png"); /* 이미지 경로 설정 */
+        background-size: contain; /* 이미지 크기 유지 */
+        background-repeat: no-repeat;
+        width: 50px;
+        height: 50px;
+        /* border: 2px solid red; */
         border-radius: 50px;
-        background: red;
         display: none;
       }
 
@@ -61,6 +66,30 @@
         border-radius: 50px;
         display: block;
       }
+      .game-over-animation {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        font-family: "Press Start 2P", system-ui;
+        transform: translate(-50%, -50%);
+        /* background-color: rgba(0, 0, 0, 0.5); */
+        /* opacity: 0.1; */
+        padding: 20px;
+        border-radius: 10px;
+        color: white;
+        text-align: center;
+        animation: showAnimation 2s ease-out forwards;
+      }
+      @keyframes showAnimation {
+        0% {
+          transform: translate(-50%, -50%) scale(0);
+          opacity: 0;
+        }
+        100% {
+          transform: translate(-50%, -50%) scale(3);
+          opacity: 1;
+        }
+      }
     </style>
   </head>
   <body>
@@ -73,18 +102,32 @@
 
     <div id="timer">0:00</div>
     <script>
+      let makeEnemies;
       let gameTimer = 0;
       let enemySpeed = 4; // 적의 이동 속도
       let player = document.getElementById("me");
       let btn = document.getElementById("start"); // 시작 버튼
 
+      // 게임 종료 시 애니메이션 표시
+      function showGameOverAnimation() {
+        const animationDiv = document.createElement("div");
+        animationDiv.innerHTML = `
+          <div class="game-over-animation">
+            <h2>GAME OVER</h2>
+            <p>기록: <span id="modal-timer">${
+              document.getElementById("timer").textContent
+            }</span></p>
+          </div>
+        `;
+        document.body.appendChild(animationDiv);
 
-
-
+        // 3초 후에 애니메이션 삭제
+        setTimeout(() => {
+          animationDiv.remove();
+        }, 3000);
+      }
 
       ////////================== BULLET =================////////
-
-
 
       // 총알 생성 함수
 
@@ -95,8 +138,8 @@
         let bullet = document.createElement("div");
         bullet.classList.add("bullet");
         bullet.style.position = "absolute";
-        bullet.style.width = "10px";
-        bullet.style.height = "10px";
+        bullet.style.width = "20px";
+        bullet.style.height = "20px";
         bullet.style.borderRadius = "50px";
         bullet.style.background = "red";
 
@@ -168,8 +211,8 @@
             document.body.removeChild(bullet);
           } else {
             // 총알의 위치 업데이트
-            bullet.style.left = bulletLeft + deltaX * (enemySpeed + 4) + "px";
-            bullet.style.top = bulletTop + deltaY * (enemySpeed + 4) + "px";
+            bullet.style.left = bulletLeft + deltaX * (enemySpeed + 10) + "px";
+            bullet.style.top = bulletTop + deltaY * (enemySpeed + 10) + "px";
 
             // 적과 충돌 검사
             checkCollisionBullet(bullet);
@@ -200,10 +243,7 @@
         }
       }
 
-
-////================== 플레이어 이동 ==================//////
-
-
+      ////================== 플레이어 이동 ==================//////
 
       // 플레이어가 마우스 위치로 이동하는 함수
       document.addEventListener("mousemove", function (event) {
@@ -214,16 +254,10 @@
         player.style.top = mouseY - player.offsetHeight / 2 + "px";
       });
 
-
-
-
-
-
-
       ///===================== ENEMY ==================//////
       // 적 생성 함수
       function createEnemy() {
-        for (let i = 0; i < 200; i++) {
+        for (let i = 0; i < 180; i++) {
           let enemy = document.createElement("div");
           enemy.classList.add("enemy");
           enemy.style.position = "absolute";
@@ -347,20 +381,42 @@
             enemyRect.bottom > bulletRect.top
           ) {
             gameOverAlertShown = true; // alert가 표시되었음을 표시
-            let retry = confirm(`게임 오버!  기록:  ${document.getElementById("timer").textContent} \n한판 더 할거면 확인`);
-            
-            if (!retry) {
-              window.location.href = "./choice.html";
-            } else  {
-              location.reload(); // 새로고침
+
+            // 애니메이션
+            showGameOverAnimation();
+            let enemies = [...document.querySelectorAll(".enemy")];
+            for (let i of enemies) {
+              document.body.removeChild(i);
             }
-            
+            clearInterval(makeEnemies);
+            setTimeout(() => {
+              let rank = document.getElementById("timer").textContent;
+
+              // div 만들어 로컬스토리지 값 불러오기 getItem || ""
+              // div를 잡아서 div.textContent를 받아온 값으로 넣는다.
+              // 게임이 끝났을 때 받아온 변수와 방금판의 rank변수를 숫자로 바꿔 비교한다.
+              // 기존이 높으면 나두고 아니면 setItem으로 새 기록을 덮어 씌운다.
+
+              // 로컬스토리지로 rank값 보내기
+              // 기록이 없으면 방금 rank를 최고기록으로 설정
+              // 기록이 있으면 존재하는 rank값과 방금판의 rank값을 숫자로 바꾸어 비교
+              // 기존이 높으면 아무것도 안하고 방금판의 rank값이 높으면 교체.
+
+              window.localStorage.setItem;
+              let retry = confirm(
+                `게임 오버!  기록:  ${rank} \n한판 더 할거면 확인`
+              );
+              if (!retry) {
+                window.location.href = "./choice.html";
+              } else {
+                location.reload(); // 새로고침
+              }
+            }, 2300);
           }
         }
       }
 
-
-/////================================================///////
+      /////================================================///////
 
       // 시간 업데이트 함수
       function updateTime() {
@@ -390,7 +446,7 @@
         createEnemy();
 
         // 적 재생성 타이머 설정
-        setInterval(createEnemy, 3000);
+        makeEnemies = setInterval(createEnemy, 3000);
       }
       btn.addEventListener("click", (e) => {
         // 게임 시작
@@ -401,6 +457,7 @@
       document.addEventListener("keyup", function (e) {
         if (e.key === "Shift") {
           console.log("이벤트리스너");
+          createBullet();
           createBullet();
         }
       });
