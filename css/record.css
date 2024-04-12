@@ -6,6 +6,7 @@
 
 
 header {
+  position: relative;
     height: 70px;
     background: #1a73e8;
     /* border-bottom: 1px solid #e6e6e6; */
@@ -64,8 +65,10 @@ header {
     border-radius: 40px;
   }
   header #user-name {
-    position: relative;
-    right: -120%;
+    position: absolute;
+    right: 30%;
+    top: 50%;
+    transform: translate(0,-50%);
     align-content: center;
     font-size: 14px;
     height: 30px;

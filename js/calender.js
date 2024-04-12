@@ -1,6 +1,18 @@
 //todo 전역변수
 const todoList = [];
 
+
+/// ================ 헤더환영합니다======= /////////
+function setName() {
+  const userName = localStorage.getItem("userName") || "회원";
+  document.querySelector(
+      "#user-name"
+  ).textContent = `${userName}님 환영합니다.`;
+}
+setName();
+/// ======================================= /////////
+
+
 // 달력 클릭하면 회색 배경으로 변경
 //.click-bg 추가하기
 let clickBgMode = false;

@@ -39,9 +39,20 @@ a {
 /* header */
 
 header {
+  position: relative;
   height: 70px;
   background: #1a73e8;
   /* border-bottom: 1px solid #e6e6e6; */
+}
+header #user-name {
+  position: absolute;
+  right: 30%;
+  top: 50%;
+  transform: translate(0, -50%);
+  align-content: center;
+  font-size: 14px;
+  height: 30px;
+  color: #fff;
 }
 
 .inner {
@@ -54,15 +65,7 @@ header {
   padding-top: 7px;
 }
 
-/* 추가작업 */
-header #user-name {
-  position: relative;
-  right: -140%;
-  align-content: center;
-  font-size: 14px;
-  height: 30px;
-  color: #fff;
-}
+
 
 /* gnb */
 
