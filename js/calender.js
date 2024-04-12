@@ -1,17 +1,15 @@
 //todo 전역변수
 const todoList = [];
 
-
 /// ================ 헤더환영합니다======= /////////
 function setName() {
   const userName = localStorage.getItem("userName") || "회원";
   document.querySelector(
-      "#user-name"
+    "#user-name"
   ).textContent = `${userName}님 환영합니다.`;
 }
 setName();
 /// ======================================= /////////
-
 
 // 달력 클릭하면 회색 배경으로 변경
 //.click-bg 추가하기
@@ -75,6 +73,7 @@ $ulDate.addEventListener("click", (e) => {
 
 $ulDate.addEventListener("contextmenu", (e) => {
   document.querySelector(".modal-save").textContent = "저장";
+  document.querySelector(".modal-delete").textContent = "닫기";
 
   e.preventDefault();
   //타겟 전역변수에 담기
@@ -105,7 +104,7 @@ $ulDate.addEventListener("contextmenu", (e) => {
 document.querySelector(".modal-overlay").addEventListener("click", (e) => {
   //삭제 버튼 클릭 시 모달창 닫기
 
-  if (e.target.matches(".modal-delete")) {
+  if (e.target.matches(".modal-delete") && e.target.textContent === "삭제") {
     //배열 지우기
     const $dataId = $findButtonTarget.querySelector(".day-box-memo-button")
       .dataset.id;
@@ -122,6 +121,10 @@ document.querySelector(".modal-overlay").addEventListener("click", (e) => {
     $findButtonTarget.innerHTML = "";
 
     //모달창 닫기
+    $modalOverlay.classList.remove("show");
+  }
+
+  if (e.target.matches(".modal-delete") && e.target.textContent === "닫기") {
     $modalOverlay.classList.remove("show");
   }
 
@@ -192,6 +195,7 @@ document.querySelector(".modal-overlay").addEventListener("click", (e) => {
 
 $ulDate.addEventListener("dblclick", (e) => {
   document.querySelector(".modal-save").textContent = "수정";
+  document.querySelector(".modal-delete").textContent = "삭제";
   $findButtonTarget = e.target.closest(".day-box-memo");
   console.log($findButtonTarget);
 
