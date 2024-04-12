@@ -54,6 +54,16 @@ header {
   padding-top: 7px;
 }
 
+/* 추가작업 */
+header #user-name {
+  position: relative;
+  right: -140%;
+  align-content: center;
+  font-size: 14px;
+  height: 30px;
+  color: #fff;
+}
+
 /* gnb */
 
 .gnb {
@@ -119,7 +129,7 @@ header {
 
 .modal-overlay {
   position: absolute;
-  z-index: 999;
+  z-index: 9999999;
   top: 170px;
   left: 370px;
   width: 340px;
@@ -316,16 +326,19 @@ ul.week {
 .memo-text-box {
   color: #fff;
   background: #1a73e8;
-  border-radius: 3px;
+  border-radius: 5px;
   margin-top: 5px;
   font-size: 12px;
-  padding: 5px;
+  padding: 3px;
+  width: 100%;
+  text-align: left;
 }
 
-.memo-text-box p {
+.day-box-memo-button {
   color: #fff;
   font-weight: 400;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  cursor: pointer;
 }

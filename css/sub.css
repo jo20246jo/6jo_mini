@@ -12,21 +12,12 @@
 }
 
 .nav_calendar {
-  /* position: relative; */
-  /* text-align: center; */
-  /* width: 100%; */
   margin-bottom: 10px;
   display: flex;
   justify-content: space-between;
 }
 
 .tit_calendar {
-  /* position: absolute; */
-  /* flex: 1 1 auto; */
-  /* padding-left: 3px; */
-  /* left: 117px;
-  top: 9px; */
-  /* text-align: left; */
   font-size: 18px;
   color: rgb(26, 115, 232);
   font-weight: 400;
@@ -40,17 +31,8 @@ button {
 }
 
 .btn_prev {
-  /* position: absolute;
-  top: 6px;
-  right: 10px; */
   margin-right: 20px;
 }
-
-/* #wrap_calendar .nav_calendar .btn_next {
-  position: absolute;
-  top: 6px;
-  right: -11px;
-} */
 
 .line {
   border-bottom: 1px solid gray;
@@ -58,30 +40,13 @@ button {
   opacity: 0.2;
 }
 
-/* .wrap_calendar .area_calendar {
-  height: auto;
-} */
-
-/* .wrap_calendar .area_calendar .row {
-  margin-top: 2px;
-  justify-content: space-between;
-} */
-
 .area_calendar .row {
-  /* position: relative; */
-  /* flex: 0 0 22px; */
-  /* left: 30px; */
-  /* justify-content: space-around; */
   margin-bottom: 3px;
   display: flex;
   justify-content: space-between;
 }
 
 .area_calendar .coulmn {
-  /* position: relative; */
-  /* padding: 1px; */
-  /* vertical-align: middle; */
-  /* box-sizing: border-box; */
   width: 30px;
   height: 30px;
   line-height: 30px;
@@ -90,7 +55,12 @@ button {
   font-weight: 400;
 }
 
-.area_calendar .sunday {
+.minus-icon {
+  color: #939393;
+  margin-left: 5px;
+}
+
+.sunday {
   color: #e85e36;
 }
 
@@ -98,56 +68,22 @@ button {
   opacity: 0.2;
 }
 
-/* .area_calendar.area_day .select.today .txt_day {
-  border-color: rgb(26, 115, 232);
-  background-color: rgb(26, 115, 232);
-  color: #ffffff;
-} */
-
 /* 기록하기 버튼 클릭하여 저장했을 시 서브 캘린더에 스탬프 찍히도록 하기 */
 .txt_day {
   cursor: pointer;
   position: relative;
   z-index: 999;
-  /* margin: 0 110px 0; */
 }
 
-.txt_day.stamped::before {
-  content: "";
-  position: absolute;
-  /* top: 50%;*/
-  left: -35%;
-  /* transform: translate(-50%, -50%); */
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background-color: rgb(26, 115, 232);
-  z-index: -10;
-  color: white;
-}
-
-/*.blue_bg {
-  content: "";
-  position: absolute;
-  /* top: 50%;*/
-/* left: -35%;
-  /* transform: translate(-50%, -50%); */
-/* width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background-color: rgb(26, 115, 232);
-  color: white;
-} */
-
-/* .circle {
+.circle {
   width: 25px;
-  /* height: 30px; 
+  height: 30px;
   line-height: 30px;
   text-align: center;
   background: #1a73e8;
   border-radius: 50%;
   color: #fff;
-} */
+}
 
 /* 하단 일정 추가 부분 */
 .event_day_wrap {
