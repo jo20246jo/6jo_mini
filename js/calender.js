@@ -134,6 +134,9 @@ document.querySelector(".modal-overlay").addEventListener("click", (e) => {
   const $inputTitleValue = $modalTitleInput.value;
   //저장 누르면
   if (e.target.matches(".modal-save") && e.target.textContent === "저장") {
+    if ($inputTitleValue === "") {
+      return;
+    }
     // 배열에 모달 입력값 저장
     const $textareaMemoValue = document.querySelector(
       ".modal-memo textarea"
