@@ -2,6 +2,7 @@
 
 
 header {
+  position: relative;
   height: 70px;
   background: #1a73e8;
   /* border-bottom: 1px solid #e6e6e6; */
@@ -111,8 +112,10 @@ div.wrap .container .sub-content {
 }
 
 header #user-name {
-  position: relative;
-  right: -100%;
+  position: absolute;
+  right: 30%;
+  top: 50%;
+  transform: translate(0, -50%);
   align-content: center;
   /* top: 7px; */
   font-size: 14px;
