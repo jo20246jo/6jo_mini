@@ -134,13 +134,16 @@ document.querySelector(".modal-overlay").addEventListener("click", (e) => {
   const $inputTitleValue = $modalTitleInput.value;
   //저장 누르면
   if (e.target.matches(".modal-save") && e.target.textContent === "저장") {
-    if ($inputTitleValue === "") {
-      return alert("내용을 입력하세요");
-    }
     // 배열에 모달 입력값 저장
     const $textareaMemoValue = document.querySelector(
       ".modal-memo textarea"
     ).value;
+    //내용 입력 없으면 return
+    console.log($textareaMemoValue);
+    if ($inputTitleValue == "" || $textareaMemoValue === "") {
+      return alert("내용을 입력하세요");
+    }
+
     const todoId = () => {
       return todoList.length === 0 ? 1 : todoList[todoList.length - 1].id + 1;
     };
