@@ -142,7 +142,7 @@ document.querySelector(".modal-overlay").addEventListener("click", (e) => {
     //내용 입력 없으면 return
     console.log($textareaMemoValue);
     if ($inputTitleValue == "" || $textareaMemoValue === "") {
-      return alert("내용을 입력하세요");
+      return alert("내용을 입력하세요.");
     }
 
     const todoId = () => {
