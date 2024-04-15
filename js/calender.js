@@ -138,6 +138,7 @@ document.querySelector(".modal-overlay").addEventListener("click", (e) => {
     const $textareaMemoValue = document.querySelector(
       ".modal-memo textarea"
     ).value;
+
     //내용 입력 없으면 return
     console.log($textareaMemoValue);
     if ($inputTitleValue == "" || $textareaMemoValue === "") {
